@@ -5,7 +5,7 @@ const Navbar = () => (
   <nav>
     <div>
       <img src={logo} height="50" alt="Logo" />
-      <p>Space Travelers' Hub</p>
+      <p>Space Travelers&apos; Hub</p>
     </div>
     <ul>
       <li>
