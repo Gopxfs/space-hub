@@ -1,4 +1,2 @@
-const RocketsPage = () => (
-  <p>Rockets</p>
-)
+const RocketsPage = () => <p>Rockets</p>;
 export default RocketsPage;
