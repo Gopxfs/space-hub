@@ -1,27 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import logo from '../images/logo.png';
 
 const Navbar = () => (
   <nav>
     <div>
-      <img src={logo} height='50' alt="Logo"/>
-      <p>Space Travelers' Hub</p>
+      <img src={logo} height="50" alt="Logo" />
+      <p>Space Travelers&apos; Hub</p>
     </div>
     <ul>
       <li>
-        <NavLink to='/rockets'>
-          Rockets
-        </NavLink>
+        <NavLink to="/rockets">Rockets</NavLink>
       </li>
       <li>
-        <NavLink to='/missions'>
-          Missions
-        </NavLink>
+        <NavLink to="/missions">Missions</NavLink>
       </li>
       <li>
-        <NavLink to='/profile'>
-          My Profile
-        </NavLink>
+        <NavLink to="/profile">My Profile</NavLink>
       </li>
     </ul>
   </nav>

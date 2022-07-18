@@ -1,4 +1,2 @@
-const MissionsPage = () => (
-  <p>Missions</p>
-)
+const MissionsPage = () => <p>Missions</p>;
 export default MissionsPage;
