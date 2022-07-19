@@ -3,24 +3,21 @@ import { createSlice } from '@reduxjs/toolkit';
 const missionSlice = createSlice({
   name: 'missions',
   initialState: {
-    mission_id: [],
-    mission_name: [],
-    description: [],
+    missions: [],
   },
   reducers: {
     getData(state, { payload }) {
-      const ids = [];
-      const names = [];
-      const descriptions = [];
+      const missions = [];
       payload.forEach((mission) => {
-        ids.push(mission.mission_id);
-        names.push(mission.mission_name);
-        descriptions.push(mission.description);
+        const newMission = {
+          id: mission.mission_id,
+          name: mission.mission_name,
+          description: mission.description,
+        };
+        missions.push(newMission);
       });
       return {
-        mission_id: ids,
-        mission_name: names,
-        description: descriptions,
+        missions,
       };
     },
   },
