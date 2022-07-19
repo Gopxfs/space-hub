@@ -1,11 +1,7 @@
 import Missions from '../components/Missions';
 
-const MissionsPage = () => {
-  Missions();
-
-  return (
-    <p>Missions</p>
-  );
-};
+const MissionsPage = () => (
+  <Missions />
+);
 
 export default MissionsPage;
