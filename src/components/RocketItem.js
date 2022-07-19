@@ -26,7 +26,7 @@ const RocketItem = (props) => {
                 {description}
                 {' '}
               </Card.Text>
-              <Button variant="primary">Goes some</Button>
+              <Button variant="primary">Reserve Rocket</Button>
             </Card.Body>
           </Col>
         </Row>
