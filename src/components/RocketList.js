@@ -14,7 +14,6 @@ const RocketList = () => {
       images: rocket.flickr_images[0],
       description: rocket.description,
     }));
-    console.log(mappedRockets);
     setRockets(mappedRockets);
   };
 
