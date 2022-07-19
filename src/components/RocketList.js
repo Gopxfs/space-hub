@@ -10,7 +10,9 @@ const RocketList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRockets());
+    if (!rockets.length) {
+      dispatch(getRockets());
+    }
   }, []);
   return (
     <Container fluid>
