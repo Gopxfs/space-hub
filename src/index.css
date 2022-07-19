@@ -3,5 +3,5 @@ body {
 }
 
 .navLink.active {
-  border-bottom: 3px solid #0066CC;
+  border-bottom: 3px solid rgb(107, 132, 201);
 }
