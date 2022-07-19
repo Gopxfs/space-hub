@@ -15,18 +15,18 @@ const NavBar = () => (
       </Navbar.Brand>
       <Nav>
         <Nav.Link>
-          <NavLink to="/rockets" style={{ textDecoration: 'none' }}>
+          <NavLink className="navLink" to="/rockets" style={{ textDecoration: 'none' }}>
             Rockets
           </NavLink>
         </Nav.Link>
 
         <Nav.Link>
-          <NavLink to="/missions" style={{ textDecoration: 'none' }}>
+          <NavLink className="navLink" to="/missions" style={{ textDecoration: 'none' }}>
             Missions
           </NavLink>
         </Nav.Link>
         <Nav.Link>
-          <NavLink to="/profile" style={{ textDecoration: 'none' }}>
+          <NavLink className="navLink" to="/profile" style={{ textDecoration: 'none' }}>
             My Profile
           </NavLink>
         </Nav.Link>
