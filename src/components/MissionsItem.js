@@ -4,9 +4,9 @@ const MissionsItem = (props) => {
   const missionData = props;
   const { name, description } = missionData;
   return (
-    <tr>
+    <tr className="missionInfo">
       <td>
-        <p style={{ 'font-weight': 'bold' }}>
+        <p>
           {name}
         </p>
       </td>
@@ -14,8 +14,8 @@ const MissionsItem = (props) => {
         {description}
         <p> </p>
       </td>
-      <td style={{ 'vertical-align': 'middle' }}><Button type="button" variant="secondary" style={{ padding: '0 3px', display: 'block', margin: 'auto' }}>NOT A MEMBER</Button></td>
-      <td style={{ 'vertical-align': 'middle' }}><Button type="button" variant="outline-secondary" style={{ display: 'block', margin: 'auto' }}>Join Mission</Button></td>
+      <td className="memberInfo"><Button type="button" variant="secondary">NOT A MEMBER</Button></td>
+      <td className="joinButton"><Button type="button" variant="outline-secondary">Join Mission</Button></td>
     </tr>
   );
 };
