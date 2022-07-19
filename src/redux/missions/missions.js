@@ -28,7 +28,7 @@ const missionSlice = createSlice({
       return {
         missions,
       };
-    }
+    },
   },
 });
 
