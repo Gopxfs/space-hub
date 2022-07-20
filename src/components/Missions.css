@@ -25,3 +25,7 @@
 .statusSection {
   width: 165px;
 }
+
+.activeMember button {
+  color: white;
+}

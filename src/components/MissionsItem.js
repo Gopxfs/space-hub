@@ -17,7 +17,7 @@ const MissionsItem = (props) => {
       {reserved
         ? (
           <>
-            <td className="memberInfo"><Button type="button" variant="info">Active Member</Button></td>
+            <td className="memberInfo activeMember"><Button type="button" variant="info">Active Member</Button></td>
             <td className="joinButton"><Button type="button" variant="outline-danger">Leave Mission</Button></td>
           </>
         )
