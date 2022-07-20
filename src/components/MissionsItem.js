@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 
 const MissionsItem = (props) => {
   const missionData = props;
-  const { name, description } = missionData;
+  const { name, description, reserved } = missionData;
   return (
     <tr className="missionInfo">
       <td>
@@ -14,8 +14,19 @@ const MissionsItem = (props) => {
         {description}
         <p> </p>
       </td>
-      <td className="memberInfo"><Button type="button" variant="secondary">NOT A MEMBER</Button></td>
-      <td className="joinButton"><Button type="button" variant="outline-secondary">Join Mission</Button></td>
+      {reserved
+        ? (
+          <>
+            <td className="memberInfo"><Button type="button" variant="secondary">NOT A MEMBER</Button></td>
+            <td className="joinButton"><Button type="button" variant="outline-secondary">Join Mission</Button></td>
+          </>
+        )
+        : (
+          <>
+            <td className="memberInfo"><Button type="button" variant="secondary">NOT A MEMBER</Button></td>
+            <td className="joinButton"><Button type="button" variant="outline-secondary">Join Mission</Button></td>
+          </>
+        )}
     </tr>
   );
 };

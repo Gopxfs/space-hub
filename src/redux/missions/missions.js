@@ -14,6 +14,13 @@ const missionSlice = createSlice({
   initialState: {
     missions: [],
   },
+  reducers: {
+    joinMission(state, { payload }) {
+      // identify mission with corresponding id
+      console.log(payload);
+      return { 1: 1 };
+    },
+  },
   extraReducers: {
     [getDataThunk.fulfilled]: (state, { payload }) => {
       const missions = [];
@@ -22,6 +29,7 @@ const missionSlice = createSlice({
           id: mission.mission_id,
           name: mission.mission_name,
           description: mission.description,
+          reserved: true,
         };
         missions.push(newMission);
       });
