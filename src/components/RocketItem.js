@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import {
   Row, Col, Card, Button,
 } from 'react-bootstrap';
+import { bookRocket, cancelReservation } from '../redux/rockets/rockets';
 import './Rocket.css';
 
 const RocketItem = (props) => {
-  const { name, thumb, description } = props;
+  const dispatch = useDispatch();
+  const {
+    id, name, thumb, description, reserved,
+  } = props;
   return (
     <>
       <Card className="mb-2">
@@ -26,7 +31,21 @@ const RocketItem = (props) => {
                 {description}
                 {' '}
               </Card.Text>
-              <Button variant="primary">Reserve Rocket</Button>
+              {reserved ? (
+                <Button
+                  variant="secondary"
+                  onClick={() => dispatch(cancelReservation(id))}
+                >
+                  Cancel Reservation
+                </Button>
+              ) : (
+                <Button
+                  variant="primary"
+                  onClick={() => dispatch(bookRocket(id))}
+                >
+                  Reserve Rocket
+                </Button>
+              )}
             </Card.Body>
           </Col>
         </Row>
@@ -36,9 +55,10 @@ const RocketItem = (props) => {
 };
 
 RocketItem.propTypes = {
-  // id: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   thumb: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 export default RocketItem;
