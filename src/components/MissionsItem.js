@@ -1,4 +1,5 @@
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 import { useDispatch } from 'react-redux';
 import { joinMission, leaveMission } from '../redux/missions/missions';
 
@@ -24,9 +25,9 @@ const MissionsItem = (props) => {
         ? (
           <>
             <td className="memberInfo activeMember">
-              <Button type="button" variant="info">
+              <Badge bg="info">
                 Active Member
-              </Button>
+              </Badge>
             </td>
             <td className="joinButton">
               <Button type="button" variant="outline-danger" onClick={() => dispatch(leaveMission(id))}>
@@ -38,9 +39,9 @@ const MissionsItem = (props) => {
         : (
           <>
             <td className="memberInfo">
-              <Button type="button" variant="secondary">
+              <Badge bg="secondary">
                 NOT A MEMBER
-              </Button>
+              </Badge>
             </td>
             <td className="joinButton">
               <Button type="button" variant="outline-secondary" onClick={() => dispatch(joinMission(id))}>
