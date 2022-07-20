@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import {
-  Row, Col, Card, Button,
+  Row, Col, Card, Button, Badge,
 } from 'react-bootstrap';
 import { bookRocket, cancelReservation } from '../redux/rockets/rockets';
 import './Rocket.css';
@@ -28,6 +28,11 @@ const RocketItem = (props) => {
               </Card.Title>
               <Card.Text>
                 {' '}
+                {reserved ? (
+                  <Badge bg="info" className="me-2">
+                    Reserved
+                  </Badge>
+                ) : null}
                 {description}
                 {' '}
               </Card.Text>
