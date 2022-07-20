@@ -9,9 +9,10 @@ const ReservedRocket = () => {
       <h3> My Rockets</h3>
       <Card>
         <ListGroup variant="flush">
-          {reserved.map((rocket) => (
+          {reserved.length !== 0 ? reserved.map((rocket) => (
             <ListGroup.Item key={rocket.id}>{rocket.name}</ListGroup.Item>
-          ))}
+          ))
+            : <ListGroup.Item>There are no rockets currently reserved.</ListGroup.Item>}
         </ListGroup>
       </Card>
     </Container>
