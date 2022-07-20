@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
-import { joinMission } from '../redux/missions/missions';
+import { joinMission, leaveMission } from '../redux/missions/missions';
 
 const MissionsItem = (props) => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const MissionsItem = (props) => {
               </Button>
             </td>
             <td className="joinButton">
-              <Button type="button" variant="outline-danger">
+              <Button type="button" variant="outline-danger" onClick={() => dispatch(leaveMission(id))}>
                 Leave Mission
               </Button>
             </td>
