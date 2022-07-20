@@ -10,6 +10,7 @@ export const getRockets = createAsyncThunk('rockets/getRockets', async () => {
       name: rocket.rocket_name,
       images: rocket.flickr_images[0],
       description: rocket.description,
+      reserved: false,
     }));
     return mappedRockets;
   } catch (err) {
@@ -19,13 +20,28 @@ export const getRockets = createAsyncThunk('rockets/getRockets', async () => {
 
 const rockectSlice = createSlice({
   name: 'rockets',
-  initialState: {
-    rockets: [],
-    loading: 'idle',
+  initialState: [],
+  reducers: {
+    bookRocket: (state, action) => {
+      const rockets = state.map((roc) => {
+        if (roc.id === action.payload) return { ...roc, reserved: true };
+
+        return roc;
+      });
+      return rockets;
+    },
+    cancelReservation: (state, { payload }) => {
+      const rockets = state.map((roc) => {
+        if (roc.id === payload) return { ...roc, reserved: false };
+
+        return roc;
+      });
+      return rockets;
+    },
   },
   extraReducers: {
-    [getRockets.fulfilled]: (state, { payload }) => ({ rockets: payload }),
+    [getRockets.fulfilled]: (state, { payload }) => payload,
   },
 });
-
+export const { bookRocket, cancelReservation } = rockectSlice.actions;
 export default rockectSlice.reducer;
