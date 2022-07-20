@@ -6,16 +6,22 @@ const MissionsItem = (props) => {
   return (
     <tr className="missionInfo">
       <td>
-        <p>
-          {name}
-        </p>
+        <p>{name}</p>
       </td>
       <td>
         {description}
         <p> </p>
       </td>
-      <td className="memberInfo"><Button type="button" variant="secondary">NOT A MEMBER</Button></td>
-      <td className="joinButton"><Button type="button" variant="outline-secondary">Join Mission</Button></td>
+      <td className="memberInfo">
+        <Button type="button" variant="secondary">
+          NOT A MEMBER
+        </Button>
+      </td>
+      <td className="joinButton">
+        <Button type="button" variant="outline-secondary">
+          Join Mission
+        </Button>
+      </td>
     </tr>
   );
 };
