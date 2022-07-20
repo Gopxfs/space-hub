@@ -14,6 +14,22 @@ const missionSlice = createSlice({
   initialState: {
     missions: [],
   },
+  reducers: {
+    joinMission(state, { payload }) {
+      const reservedMission = state.missions.map((mission) => {
+        if (mission.id === payload) return { ...mission, reserved: true };
+        return { ...mission };
+      });
+      return { missions: reservedMission };
+    },
+    leaveMission(state, { payload }) {
+      const leaveMission = state.missions.map((mission) => {
+        if (mission.id === payload) return { ...mission, reserved: false };
+        return { ...mission };
+      });
+      return { missions: leaveMission };
+    },
+  },
   extraReducers: {
     [getDataThunk.fulfilled]: (state, { payload }) => {
       const missions = [];
@@ -22,6 +38,7 @@ const missionSlice = createSlice({
           id: mission.mission_id,
           name: mission.mission_name,
           description: mission.description,
+          reserved: false,
         };
         missions.push(newMission);
       });
@@ -32,6 +49,6 @@ const missionSlice = createSlice({
   },
 });
 
-export const { getData } = missionSlice.actions;
+export const { joinMission, leaveMission } = missionSlice.actions;
 
 export default missionSlice.reducer;
