@@ -13,9 +13,7 @@ const MissionsItem = (props) => {
   return (
     <tr className="missionInfo">
       <td>
-        <p>
-          {name}
-        </p>
+        <p>{name}</p>
       </td>
       <td>
         {description}
