@@ -13,12 +13,14 @@ const MissionsTable = () => {
     missionsNames.push((<tr><td>{mission.name}</td></tr>));
   });
 
+  const emptyMissions = (<tr><td>There are no missions currently joined.</td></tr>);
+
   return (
     <div className="missionsProfile">
       <h3>My Missions</h3>
       <Table bordered>
         <tbody>
-          {missionsNames}
+          {missionsNames.length !== 0 ? missionsNames : emptyMissions}
         </tbody>
       </Table>
     </div>
