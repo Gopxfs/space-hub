@@ -23,6 +23,7 @@ const Missions = () => {
         id={mission.id}
         description={mission.description}
         reserved={mission.reserved}
+        key={mission.id}
       />
     ));
   });
