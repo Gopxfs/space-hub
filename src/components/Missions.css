@@ -1,0 +1,31 @@
+#table {
+  width: 95%;
+  margin: 20px auto;
+}
+
+.missionInfo p {
+  font-weight: bold;
+}
+
+.memberInfo,
+.joinButton {
+  vertical-align: middle;
+}
+
+.memberInfo *,
+.joinButton * {
+  display: block;
+  margin: auto;
+}
+
+.memberInfo button {
+  padding: 0 3px;
+}
+
+.statusSection {
+  width: 150px;
+}
+
+.activeMember button {
+  color: white;
+}
