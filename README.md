@@ -1,5 +1,5 @@
 # Space Hub
-@Gopxfs and @worashf built a Space Hub application, allowing users to check on SpaceX rockets and missions (fetching data from SpaceX's API). A profile section was also implemented, displaying the missions and rockets currently booked. React & Redux were used to create and dispatch actions, and React Testing Library & Jest were used to test the components/functions. The styling was made using React Bootstrap and plain CSS3 files.
+An application that allows users to reserve rockets/join missions with data being collected direct from the SpaceX API. There is also a profile section containing the current booked items.
 
 ## Built With:
 - React & Redux
