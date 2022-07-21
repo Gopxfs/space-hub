@@ -3,8 +3,10 @@ A website that allows users to reserve rockets/join missions with data being col
 
 ## Built With:
 - React & Redux
+- Redux Toolkit
 - React Bootstrap
 - JavaScript
+- CSS3
 
 ## Live demo:
 Not ready for deployment.
