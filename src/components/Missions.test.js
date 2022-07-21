@@ -4,6 +4,7 @@ import Missions from '../components/Missions';
 import { Provider } from 'react-redux';
 import store from '../redux/configureStore';
 import '@testing-library/jest-dom';
+import ReactTestUtils from 'react-dom/test-utils';
 
 const renderMissions = () => {
  return render(
@@ -36,5 +37,42 @@ describe('Missions table should exist', () => {
 
     const mission3 = await screen.findByText('Eutelsat');
     expect(mission3).toBeInTheDocument();
+  });
+});
+
+describe('Missions badges/buttons should exist', () => {
+  test('NOT A MEMBER badges should exist', () => {
+    renderMissions();
+    const memberBadges = screen.getAllByText('NOT A MEMBER')[0];
+    expect(memberBadges).toBeInTheDocument();
+  });
+  test('Join Mission buttons should exist', () => {
+    renderMissions();
+    const joinButtons = screen.getAllByText('Join Mission')[1];
+    expect(joinButtons).toBeInTheDocument();
+  });
+});
+
+describe('Mission button should work and badge should be updated', () => {
+  test('Join mission button functionality', () => {
+    setTimeout(() => {
+      renderMissions();
+      const joinButtons = document.querySelector('.joinButton');
+      ReactTestUtils.Simulate.click(joinButtons);
+      const memberBadges = screen.getAllByText('Active Member')[0];
+      const leaveButtons = screen.getAllByText('Leave Mission')[0];
+      expect(memberBadges).toBeInTheDocument();
+      expect(leaveButtons).toBeInTheDocument();
+    }, 0);
+  });
+  test('Leave mission button functionality', () => {
+    setTimeout(() => {
+      renderMissions();
+      const joinButtons = document.querySelector('.joinButton');
+      ReactTestUtils.Simulate.click(joinButtons);
+      ReactTestUtils.Simulate.click(joinButtons);
+      const memberBadges = screen.getAllByText('NOT A MEMBER')[0];
+      expect(memberBadges).toBeInTheDocument();
+    }, 0);
   });
 });
