@@ -1,18 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Missions from '../components/Missions';
 import { Provider } from 'react-redux';
+import ReactTestUtils from 'react-dom/test-utils';
 import store from '../redux/configureStore';
 import '@testing-library/jest-dom';
-import ReactTestUtils from 'react-dom/test-utils';
+import Missions from './Missions';
 
-const renderMissions = () => {
- return render(
-    <Provider store={store}>
-      <Missions />
-    </Provider>
-    );
-};
+const renderMissions = () => render(
+  <Provider store={store}>
+    <Missions />
+  </Provider>,
+);
 
 describe('Missions table should exist', () => {
   test('Table headers should exist', () => {
