@@ -1,5 +1,5 @@
 # Space Hub
-An application that allows users to reserve rockets/join missions with data being collected directly from the SpaceX API. There is also a profile section containing the current booked items.
+A website that allows users to reserve rockets/join missions with data being collected directly from the SpaceX API. There is also a profile section containing the current booked items.
 
 ## Built With:
 - React & Redux
