@@ -9,7 +9,7 @@ A website that allows users to reserve rockets/join missions with data being col
 - CSS3
 
 ## Live demo:
-Not ready for deployment.
+[Live Demo](https://gopxfs-space-hub.herokuapp.com/).
 
 ## Getting Started:
 To access and change the code on your computer (using GIT):
